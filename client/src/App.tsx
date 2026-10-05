@@ -13,9 +13,7 @@ export function App() {
       updateCheck(await checksApi.create(vin));
       return true;
     } catch (requestError) {
-      setError(
-        requestError instanceof Error ? requestError.message : 'Не удалось создать проверку',
-      );
+      setError(requestError instanceof Error ? requestError.message : 'Не удалось создать проверку');
       return false;
     }
   }

@@ -22,9 +22,7 @@ export function CheckForm({ onSubmit, error }: CheckFormProps) {
     setSubmitting(true);
     try {
       const isCreated = await onSubmit(normalizedVin);
-      if (isCreated) {
-        setVin('');
-      }
+      if (isCreated) setVin('');
     } finally {
       setSubmitting(false);
     }

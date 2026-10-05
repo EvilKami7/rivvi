@@ -11,9 +11,7 @@ export function useChecks() {
   const [error, setError] = useState('');
 
   const updateCheck = useCallback((check: Check) => {
-    setChecks((current) =>
-      [check, ...current.filter((item) => item.id !== check.id)].slice(0, MAX_CHECKS),
-    );
+    setChecks((current) => [check, ...current.filter((item) => item.id !== check.id)].slice(0, MAX_CHECKS));
   }, []);
 
   useEffect(() => {
@@ -23,18 +21,11 @@ export function useChecks() {
       .list({ signal: controller.signal })
       .then(setChecks)
       .catch((requestError: unknown) => {
-        if (requestError instanceof DOMException && requestError.name === 'AbortError') {
-          return;
-        }
-
-        setError(
-          requestError instanceof Error ? requestError.message : 'Не удалось загрузить историю',
-        );
+        if (requestError instanceof DOMException && requestError.name === 'AbortError') return;
+        setError(requestError instanceof Error ? requestError.message : 'Не удалось загрузить историю');
       })
       .finally(() => {
-        if (!controller.signal.aborted) {
-          setLoading(false);
-        }
+        if (!controller.signal.aborted) setLoading(false);
       });
 
     const socket = io();

@@ -22,10 +22,7 @@ async function request<T>(endpoint: string, config: RequestConfig = {}): Promise
     method: normalizedMethod,
     headers,
     credentials: 'include',
-    body:
-      data === undefined || ['GET', 'HEAD'].includes(normalizedMethod)
-        ? undefined
-        : JSON.stringify(data),
+    body: data === undefined || ['GET', 'HEAD'].includes(normalizedMethod) ? undefined : JSON.stringify(data),
   });
 
   if (!response.ok) {
@@ -33,9 +30,7 @@ async function request<T>(endpoint: string, config: RequestConfig = {}): Promise
   }
 
   const contentType = response.headers.get('content-type') ?? '';
-  return (
-    contentType.includes('application/json') ? response.json() : response.text()
-  ) as Promise<T>;
+  return (contentType.includes('application/json') ? response.json() : response.text()) as Promise<T>;
 }
 
 export const http = {
