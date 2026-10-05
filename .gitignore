@@ -1,0 +1,9 @@
+node_modules
+.idea
+dist
+.env
+*.tsbuildinfo
+client/node_modules
+service/node_modules
+client/dist
+service/dist
