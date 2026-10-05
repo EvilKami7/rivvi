@@ -8,6 +8,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev:db": "docker compose up -d db",
+    "dev:db:logs": "docker compose logs -f db",
+    "dev:db:down": "docker compose down",
+    "dev:back": "npm run dev --workspace service",
+    "dev:front": "npm run dev --workspace client",
+    "db:migrate": "npm exec prisma migrate dev --workspace service --",
     "typecheck": "tsc -b",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

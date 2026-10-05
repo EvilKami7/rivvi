@@ -1,0 +1,63 @@
+.check {
+  background: #fff;
+  border: 1px solid #dce5df;
+  border-radius: 14px;
+  padding: 18px;
+}
+.checkHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  letter-spacing: 0.035em;
+}
+.status {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #e8edf0;
+  color: #445;
+}
+.completed {
+  background: #d9f3e3;
+  color: #16613e;
+}
+.failed {
+  background: #fde8e7;
+  color: #a72a22;
+}
+.processing {
+  background: #fff1c8;
+  color: #806000;
+}
+.label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #587066;
+  margin-bottom: 8px;
+}
+.check dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 10px;
+  margin: 20px 0;
+}
+.check dt {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #587066;
+  margin-bottom: 8px;
+}
+.check dd {
+  margin: 0;
+  font-weight: 650;
+}
+.check small {
+  color: #78857e;
+}
+.date {
+  color: #78857e;
+}
